@@ -1,0 +1,30 @@
+
+.home-image-box {
+    margin: 10%;
+    margin-bottom: 4%;
+    margin-top: 0;
+    padding: 4% 10%;
+    border: 5px solid white;
+}
+
+.sop-box {
+    flex: 2;
+}
+
+.sop-box > h1, h2, p {
+    margin-left: auto;
+    margin-right: auto;
+    width: max(70%, 400px);
+    font-size: 1.2rem;
+}
+
+.sidebar {
+    flex: 1;
+    border-left: 2px solid white;
+    padding-left: 1rem;
+}
+
+.sidebar > div {
+    border-top: 2px dotted white;
+}
+
