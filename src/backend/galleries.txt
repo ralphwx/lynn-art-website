@@ -1,0 +1,33 @@
+
+GALLERY: Garfield and Friends
+
+LEFT
+{
+    src: garfield.webp
+    title: Garfield
+}
+{
+    src: arlene.webp
+    title: Arlene
+}
+
+CENTER
+{
+    src: jon.webp
+    title: Jon
+}
+{
+    src: lyman.webp
+    title: Lyman
+}
+
+RIGHT
+{
+    src: odie.webp
+    title: Odie
+}
+{
+    src: nermal.webp
+    title: Nermal
+}
+
