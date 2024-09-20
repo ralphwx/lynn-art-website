@@ -41,7 +41,6 @@ function Main(props) {
                 <br/>
                 <div style={{textAlign: "center"}}>
                     <p>starspiritart@gmail.com</p>
-                    <p>lynn2c@htva.net</p>
                 </div>
             </div>
             <div className="sidebar">
@@ -71,13 +70,10 @@ function Main(props) {
                 </div>
                 <div>
                     <h2 style={{fontSize: "1.5rem", fontFamily: "Oswald", color: "red", textAlign: "center"}}>
-                        Ongoing Exhibits
+                        My book
                     </h2>
-                    <p>Gallery 41, Lake Street</p>
-                    <p>Owego, NY 13850</p>
-                    <p>&</p>
-                    <p>The Mad Hatter Cafe & Co-Op</p>
-                    <p>Athens, PA 18840</p>
+                    <p>Moon's breath and Magick</p>
+                    <p>About the book</p>
                 </div>
             </div>
         </div>

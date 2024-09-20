@@ -19,12 +19,12 @@ function Main(props) {
                 fontFamily: "Alegreya, serif",
                 fontSize: "1.2rem",
             }}>
-                <h2 style={{fontFamily: "Great Vibes, cursive", fontSize: "3rem"}}>
+                <h2 style={{color: "red", fontFamily: "Great Vibes, cursive", fontSize: "3rem"}}>
                     About the Artist
                 </h2>
         
                 <p>
-                    Over the past 21 years, this Finger Lakes New York artist has been
+                    Over the past 31 years, this Finger Lakes New York artist has been
                     fulfilling her life's purpose of earth healing by making her art
                     internationally accessible.
                 </p>
@@ -62,14 +62,13 @@ function Main(props) {
                     graciously purchased one of her pieces for their private collection.
                     In March, 2018, several pieces of her work were selected for exhibit
                     at Manhatten's Stricoff Fine Arts Gallery in Chelsea, which led to a
-                    piece being shown in Zurich, Switzerland. From the NYC show, a
+                    piece being shown in Zurich, Switzerland,as well as Barcelona, Spain. 
+                    From the NYC show, a
                     catalog featuring 15 pieces of her artwork was published in Germany,
                     and is available on US Amazon as Art Box Project NYC, under her
                     name. Lynn's work is available in select shops throughout the United
-                    States, particularly at Gallery 41 in Owego, NY, in addition to
-                    accessibility thru Acorn Designs, out of Trumansburg, NY. Please
-                    enjoy a visit to her shop on shopvida.com, her personal shop is
-                    Lynn2C, and also her art page of Facebook, Dream Weaver Art Studio.
+                    States, in addition to
+                    accessibility thru Acorn Designs, out of Trumansburg, NY. 
                 </p>
         
                 <p>

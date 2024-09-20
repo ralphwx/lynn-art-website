@@ -9,20 +9,21 @@ function Footer(props) {
         <div className="container" style={{display: "flex"}}>
             <div className="footerBlock">
                 <p>Dream Weaver Studio</p>
-                <p>Spencer, NY, USA</p>
-                <p><a href="shopvida.com">shopvida.com</a></p>
-                <p>607-342-1533</p>
+                <p>Grotin, NY, USA</p>
                 <div style={{display: "flex", gap: "20px", justifyContent: "center"}}>
                     <img className="socialImg" src={facebookImgSrc} />
                     <img className="socialImg" src={googlePlusImgSrc} />
-                    <img className="socialImg" src={linkedinImgSrc} />
-                    <img className="socialImg" src={pinterestImgSrc} />
+                    <a href="https://www.instagram.com/lynn2c">
+                        <img className="socialImg" src={linkedinImgSrc} />
+                    </a>
+                    <a href="https://www.pinterest.com/lynn2c">
+                        <img className="socialImg" src={pinterestImgSrc} />
+                    </a>
                 </div>
             </div>
             <div className="footerBlock">
                 <p>Original artwork is individually priced, with shipping calculated by location.</p>
-                <p>8.5 x 11 unframed prints are priced at $10 plus shipping. Larger are $20 & poster sized prints start at $55 plus shipping.</p>
-                <p>Framed prints are individually priced</p>
+                <p>Prints are individually priced</p>
             </div>
         </div>
 

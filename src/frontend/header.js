@@ -14,8 +14,6 @@ function Header(props) {
             <div className="menuItem">About</div>
             <div className="menuItem">Contact</div>
             <div className="menuItem">{"Galleries \u25be"}</div>
-            <div className="menuItem hspace"></div>
-            <div className="menuItem" style={{color: "red"}}>Contact: 607-342-1533</div>
         </div>
     </div>
 }
