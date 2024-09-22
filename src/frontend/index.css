@@ -45,10 +45,35 @@ body {
     font-size: 1.5rem;
     padding: 1.5rem;
     font-family: Arial;
+    position: relative;
 }
 
-.menuItem:hover {
+.menuItem > a {
+    color: white;
+    text-decoration: none;
+}
+
+.menuItem > a:hover {
     color: red;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    border: 1px solid transparent;
+    background-color: white;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+}
+
+.menu-dropdown > a {
+    font-size: 1.3rem;
+    font-family: Arial;
+    color: red;
+}
+
+.menuItem:hover .menu-dropdown {
+    display: block;
 }
 
 .footer {

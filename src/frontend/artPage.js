@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {DOMAIN} from "./config.js";
+import {numberToRoman} from "./gallery_numbers.js";
 
 import "./index.css";
 import "./gallery.css";
@@ -80,19 +81,6 @@ function Main(props) {
 
         <Footer />
     </div>
-}
-
-let romans = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
-  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
-
-/**
- * Returns the roman numeral representation of [number + 1]
- */
-function numberToRoman(number) {
-    if(number < 0 || number >= 20) {
-        return "";
-    }
-    return romans[number];
 }
 
 const queryParameters = new URLSearchParams(window.location.search);
