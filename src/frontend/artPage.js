@@ -1,13 +1,7 @@
 import ReactDOM from "react-dom/client";
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
-
-import garfieldImgSrc from "./images/garfield.webp";
-import odieImgSrc from "./images/odie.webp";
-import jonImgSrc from "./images/jon.webp";
-import nermalImgSrc from "./images/nermal.webp";
-import arleneImgSrc from "./images/arlene.webp";
-import lymanImgSrc from "./images/lyman.webp";
+import {DOMAIN} from "./config.js";
 
 import "./index.css";
 import "./gallery.css";
@@ -20,6 +14,8 @@ import "./gallery.css";
 //    Middle column list of {src, title} objects
 //    Right column list of {src, title} objects
 
+let imageUrlPrefix = DOMAIN + "/image?src=";
+
 /**
  * Sub-component for displaying a single art piece in the gallery. Props should
  * contain props:
@@ -28,10 +24,14 @@ import "./gallery.css";
  */
 function ArtBlock(props) {
     return <div>
-        <img src={props.src} style={{maxWidth: "100%", height: "auto"}} />
+        <img 
+            src={imageUrlPrefix + encodeURIComponent(props.src)} 
+            style={{maxWidth: "100%", height: "auto"}} 
+        />
         <div className="caption">{props.title}</div>
     </div>
 }
+
 
 /**
  * props should contain props:
@@ -82,36 +82,33 @@ function Main(props) {
     </div>
 }
 
-let leftColumn = [
-    {
-        src: garfieldImgSrc,
-        title: "Garfield",
-    },
-    {
-        src: arleneImgSrc,
-        title: "Arlene",
+let romans = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
+
+/**
+ * Returns the roman numeral representation of [number + 1]
+ */
+function numberToRoman(number) {
+    if(number < 0 || number >= 20) {
+        return "";
     }
-];
-let centerColumn = [
-    {
-        src: jonImgSrc,
-        title: "Jon",
-    },
-    {
-        src: lymanImgSrc,
-        title: "Lyman",
-    }
-];
-let rightColumn = [
-    {
-        src: odieImgSrc,
-        title: "Odie",
-    },
-    {
-        src: nermalImgSrc,
-        title: "Nermal",
-    }
-];
+    return romans[number];
+}
+
+const queryParameters = new URLSearchParams(window.location.search);
+let galleryNumber = parseInt(queryParameters.get("index"));
+if(Number.isNaN(galleryNumber)) galleryNumber = -1;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Main leftColumn={leftColumn} rightColumn={rightColumn} centerColumn={centerColumn} galleryNumber={"I"} galleryName={"Garfield and Friends"} />);
+fetch(DOMAIN + "/gallery_data?number=" + galleryNumber).then((response) => {
+    return response.json();
+}).then((data) => {
+    root.render(<Main
+        leftColumn={data.left}
+        centerColumn={data.center}
+        rightColumn={data.right}
+        galleryNumber={numberToRoman(galleryNumber)}
+        galleryName={data.name}
+    />);
+})
+
