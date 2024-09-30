@@ -1,8 +1,10 @@
 
 import ReactDOM from "react-dom/client";
+import {useState, useEffect} from "react";
 
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
+import {DOMAIN} from "./config.js";
 import "./index.css";
 import "./home.css";
 
@@ -10,18 +12,32 @@ import demeterImgSrc from "./images/demeter.png";
 import artistImgSrc from "./images/artist.jpg";
 
 function Main(props) {
+    let [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        fetch(DOMAIN + "/events").then((response) => {
+            return response.json();
+        }).then((data) => {
+            setEvents(data);
+        });
+    }, []);
+
     return <div>
         <Header />
-        <div className="container centered" style={{display: "flex", gap: "10px", marginBottom: "1rem"}}>
-            <div className="sop-box" style={{flex: 2}}>
+        <div className="container centered" 
+            style={{display: "flex", gap: "10px", marginBottom: "1rem"}}
+        >
+            <div className="sop-box">
                 <div className="home-image-box">
-                    <img src={demeterImgSrc} style={{width: "100%", height: "auto"}}/>
-                    <div style={{textAlign: "center"}}>{"Demeter \u00a9 L Capani-Czebiniak"}</div>
+                    <img className="wide-img" src={demeterImgSrc} />
+                    <div style={{textAlign: "center"}}>
+                        {"Demeter \u00a9 L Capani-Czebiniak"}
+                    </div>
                 </div>
-                <h1 style={{fontSize: "3.2rem", fontFamily: "Great Vibes", textAlign: "center"}}>
+                <h1>
                     Lynn Capani-Czebiniak
                 </h1>
-                <h2 style={{fontSize: "2rem", fontFamily: "Great Vibes, serif", textAlign: "center", color: "red"}}>Statement of Purpose</h2>
+                <h2>Statement of Purpose</h2>
                 <p>
                     In an effort to aid in the healing of the wounded planet, 
                     this Finger Lakes New York artist gently weaves dreams,
@@ -45,12 +61,7 @@ function Main(props) {
             </div>
             <div className="sidebar">
                 <div>
-                    <h2 style={{
-                        fontSize: "2rem", 
-                        fontFamily: "Great Vibes, serif",
-                        color: "red",
-                        textAlign: "center",
-                    }}>
+                    <h2>
                         The Invitation
                     </h2>
                     <p>
@@ -58,22 +69,35 @@ function Main(props) {
                         ethereal colors that heal the wounds of the soul. 
                         Namaste.
                     </p>
-                    <img src={artistImgSrc} style={{width: "100%", height: "auto"}}/>
+                    <img className="wide-img" src={artistImgSrc} />
                 </div>
                 <div>
-                    <h2 style={{fontSize: "1.5rem", fontFamily: "Oswald", color: "red", textAlign: "center"}}>
+                    <h2>
                         Events & Exhibitions
                     </h2>
-                    <p>
-                        Updated events here
-                    </p>
+                    {events.map(x => <p>{x}</p>)}
                 </div>
                 <div>
-                    <h2 style={{fontSize: "1.5rem", fontFamily: "Oswald", color: "red", textAlign: "center"}}>
+                    <h2>
                         My book
                     </h2>
-                    <p>Moon's breath and Magick</p>
-                    <p>About the book</p>
+                    <p style={{
+                        textAlign: "center", 
+                        color: "red", 
+                        fontSize: "1.35rem",
+                    }}>
+                        <i>Moon's breath and Magick</i>
+                    </p>
+                    <p>
+                        Within a semiautobiographical presentation, Lynn shares
+                        original goddess creations accompanied by explanations
+                        and details of her own intimate experiences with each
+                        goddess, including Abuk, Morpheus, Gaia, Kwan Yin,
+                        Mare-Mayde, and many more.
+                    </p>
+                    <p><a href="https://a.co/d/gkytfKf">
+                        Find the book here!
+                    </a></p>
                 </div>
             </div>
         </div>

@@ -49,6 +49,12 @@ def receive_message(message: Message):
 def get_messages():
     return FileResponse("./messages.log")
 
+from eventsParser import parse as parse_events
+@app.get("/events")
+def get_events():
+    events = parse_events("./events.txt")
+    return events
+
 from fastapi.responses import FileResponse
 import os.path
 @app.get("/image")

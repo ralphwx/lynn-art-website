@@ -72,11 +72,12 @@ function Main(props) {
 
         <div className="container centered">
             <div style={{margin: "0 15%", borderBottom: "2px dotted white"}}>
-                <img src={artistImgSrc} style={{
-                    width: "70%", 
-                    height: "auto",
-                    marginLeft: "15%",
-                }}/>
+                <div className="centered" style={{display: "flex", justifyContent: "center"}}>
+                    <img src={artistImgSrc} style={{
+                        height: "50dvh",
+                        width: "auto",
+                    }}/>
+                </div>
                 <p style={{
                     fontFamily: "Great Vibes, serif",
                     fontSize: "3rem",
@@ -123,7 +124,7 @@ function Main(props) {
                 </div>
                 <div className="infoBox" style={{flex: 1, textAlign: "center"}}>
                     <h2>Location</h2>
-                    <p>Groton, NY, USA</p>
+                    <p>Grotin, NY, USA</p>
                     <br/>
                     <h2>Email</h2>
                     <p>starspiritart@gmail.com</p>
