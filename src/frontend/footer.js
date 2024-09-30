@@ -11,8 +11,9 @@ function Footer(props) {
                 <p>Dream Weaver Studio</p>
                 <p>Grotin, NY, USA</p>
                 <div style={{display: "flex", gap: "20px", justifyContent: "center"}}>
-                    <img className="socialImg" src={facebookImgSrc} />
-                    <img className="socialImg" src={googlePlusImgSrc} />
+                    <a href="https://www.facebook.com/lcapaniczebiniak">
+                        <img className="socialImg" src={facebookImgSrc} />
+                    </a>
                     <a href="https://www.instagram.com/lynn2c">
                         <img className="socialImg" src={instagramImgSrc} />
                     </a>
