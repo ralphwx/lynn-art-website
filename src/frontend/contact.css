@@ -6,26 +6,26 @@
 
 .formContainer > input {
     width: calc(100% - 4rem - 4px);
+    max-width: 400px;
     height: 2rem;
     font-size: 1rem;
-    margin: 1rem 2rem;
-    margin-left: 0;
+    margin: 1rem auto;
 }
 
 .formContainer > textarea {
     width: calc(100% - 4rem - 4px);
+    max-width: 400px;
     height: 10rem;
     font-size: 1rem;
-    margin: 1rem 2rem;
-    margin-left: 0;
+    margin: 1rem auto;
 }
 
 .formContainer > button {
     width: calc(100% - 4rem - 4px);
+    max-width: 400px;
     height: 2.5rem;
     font-size: 1rem;
-    margin: 1rem 2rem;
-    margin-left: 0;
+    margin: 1rem auto;
 }
 
 .infoBox > p {

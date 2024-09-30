@@ -1,4 +1,6 @@
 import ReactDOM from "react-dom/client";
+import {useState, useEffect} from "react";
+
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {DOMAIN} from "./config.js";
@@ -27,22 +29,13 @@ function ArtBlock(props) {
     return <div>
         <img 
             src={imageUrlPrefix + encodeURIComponent(props.src)} 
-            style={{maxWidth: "100%", height: "auto"}} 
+            style={{width: "100%", height: "auto"}} 
         />
         <div className="caption">{props.title}</div>
     </div>
 }
 
-
-/**
- * props should contain props:
- *     galleryNumber (roman numeral string)
- *     galleryName (string)
- *     leftColumn (list of {src, title} objects)
- *     centerColumn (list of {src, title} objects)
- *     rightColumn (list of {src, title} objects)
- */
-function Main(props) {
+function GalleryDesktop(props) {
     let leftColumn = [];
     let centerColumn = [];
     let rightColumn = [];
@@ -56,7 +49,6 @@ function Main(props) {
     for(let {src, title} of props.centerColumn) {
         centerColumn.push(<ArtBlock src={src} title={title} />);
     }
-
     return <div>
         <Header />
         <div className="container centered">
@@ -81,6 +73,73 @@ function Main(props) {
 
         <Footer />
     </div>
+}
+
+function GalleryMobile(props) {
+    let leftColumn = [];
+    let centerColumn = [];
+    let rightColumn = [];
+
+    for(let {src, title} of props.leftColumn) {
+        leftColumn.push(<ArtBlock src={src} title={title} />);
+    }
+    for(let {src, title} of props.rightColumn) {
+        rightColumn.push(<ArtBlock src={src} title={title} />);
+    }
+    for(let {src, title} of props.centerColumn) {
+        centerColumn.push(<ArtBlock src={src} title={title} />);
+    }
+    return <div>
+        <Header />
+        <div className="container centered">
+            <div style={{padding: "0 10%"}}>
+                <div className="galleryTitle">
+                    {"Gallery " + props.galleryNumber}
+                </div>
+                <div className="galleryTitle">
+                    {props.galleryName}
+                </div>
+                <div className="galleryColumn">
+                    {leftColumn}
+                </div>
+                <div className="galleryColumn">
+                    {centerColumn}
+                </div>
+                <div className="galleryColumn">
+                    {rightColumn}
+                </div>
+            </div>
+        </div>
+        <Footer />
+    </div>
+}
+
+/**
+ * props should contain props:
+ *     galleryNumber (roman numeral string)
+ *     galleryName (string)
+ *     leftColumn (list of {src, title} objects)
+ *     centerColumn (list of {src, title} objects)
+ *     rightColumn (list of {src, title} objects)
+ */
+function Main(props) {
+    let threshold = 742;
+    let [isDesktop, setIsDesktop] = useState(window.innerWidth > threshold);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsDesktop(window.innerWidth > threshold);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    return isDesktop ? <GalleryDesktop {...props} /> 
+      : <GalleryMobile {...props} />;
 }
 
 const queryParameters = new URLSearchParams(window.location.search);

@@ -5,7 +5,6 @@ import {useState, useEffect} from "react";
 
 function Header(props) {
     let [galleryList, setGalleryList] = useState([]);
-    console.log(galleryList);
     useEffect(() => {
         fetch(DOMAIN + "/all_galleries").then((response) => {
             return response.json();
@@ -31,7 +30,9 @@ function Header(props) {
     
         <div className="container centered" style={{
             display: "flex", 
-            marginBottom: "2rem"}}>
+            marginBottom: "3rem",
+            flexWrap: "wrap"
+        }}>
             <div className="menuItem">
                 <a href={DOMAIN}>Home</a>
             </div>

@@ -25,7 +25,7 @@ function Main(props) {
     return <div>
         <Header />
         <div className="container centered" 
-            style={{display: "flex", gap: "10px", marginBottom: "1rem"}}
+            style={{display: "flex", gap: "10px", marginBottom: "1rem", flexWrap: "wrap"}}
         >
             <div className="sop-box">
                 <div className="home-image-box">
@@ -69,7 +69,7 @@ function Main(props) {
                         ethereal colors that heal the wounds of the soul. 
                         Namaste.
                     </p>
-                    <img className="wide-img" src={artistImgSrc} />
+                    <img src={artistImgSrc} style={{width: "80%", height: "auto", marginLeft: "10%", marginBottom: "1rem"}}/>
                 </div>
                 <div>
                     <h2>

@@ -4,11 +4,12 @@
     margin-bottom: 4%;
     margin-top: 0;
     padding: 4% 10%;
-    border: 5px solid white;
+    border: 2px solid white;
 }
 
 .sop-box {
     flex: 2;
+    min-width: min(400px, 100%);
 }
 
 .sop-box > p {
@@ -18,7 +19,7 @@
 .sop-box > h1, h2, p {
     margin-left: auto;
     margin-right: auto;
-    width: max(70%, 400px);
+    width: 70%;
 }
 
 h1 {
@@ -38,6 +39,13 @@ h2 {
     flex: 1;
     border-left: 2px solid white;
     padding-left: 1rem;
+    min-width: min(300px, 100%);
+}
+
+@media (max-width: 742px) {
+    .sidebar {
+        border-left: none;
+    }
 }
 
 .sidebar > div {

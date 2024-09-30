@@ -74,26 +74,32 @@ function Main(props) {
             <div style={{margin: "0 15%", borderBottom: "2px dotted white"}}>
                 <div className="centered" style={{display: "flex", justifyContent: "center"}}>
                     <img src={artistImgSrc} style={{
-                        height: "50dvh",
+                        height: "40svh",
                         width: "auto",
                     }}/>
                 </div>
-                <p style={{
+                <div style={{
                     fontFamily: "Great Vibes, serif",
                     fontSize: "3rem",
                     color: "red",
                     textAlign: "center",
+                    margin: "1rem 0",
                 }}>
                     Contact the Artist
-                </p>
+                </div>
             </div>
         </div>
 
         <div className="container centered">
-            <div style={{display: "flex", justifyContent: "center", padding: "30px"}}>
-                <div style={{flex: 1}}>
-                    <h2>CONTACT FORM</h2>
-                    <p style={{fontSize: "1.2rem"}}>
+            <div style={{
+                display: "flex", 
+                justifyContent: "center", 
+                padding: "30px",
+                flexWrap: "wrap",
+            }}>
+                <div style={{flex: 1, minWidth: "min(400px, 100%)"}}>
+                    <h2 style={{textAlign: "center"}}>CONTACT FORM</h2>
+                    <p style={{textAlign: "center", fontSize: "1.2rem"}}>
                         Please feel free to contact the artist by filling in the
                         information below. Thank you!
                     </p>
@@ -122,7 +128,7 @@ function Main(props) {
                         <button onClick={sendMessage}>Send!</button>
                     </div>
                 </div>
-                <div className="infoBox" style={{flex: 1, textAlign: "center"}}>
+                <div className="infoBox" style={{flex: 1, textAlign: "center", minWidth: "min(400px, 100%)"}}>
                     <h2>Location</h2>
                     <p>Grotin, NY, USA</p>
                     <br/>

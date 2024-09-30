@@ -34,16 +34,20 @@ body {
 .title {
     color: red;
     font-family: "Great Vibes", serif;
-    font-size: 4rem;
+    font-size: min(4rem, 10svw);
+    margin: 0.5em 0;
 }
 
 .subtitle {
     font-family: "Oswald", sans-serif;
+    font-size: min(3rem, 7.5svw);
+    margin: 0.5em 0;
 }
 
 .menuItem {
     font-size: 1.5rem;
     padding: 1.5rem;
+    padding-bottom: 0;
     font-family: Arial;
     position: relative;
 }
