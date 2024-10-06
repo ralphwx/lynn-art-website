@@ -100,7 +100,7 @@ function Main(props) {
                 <div className="infoBox" style={{flex: 1, textAlign: "center", minWidth: "min(400px, 100%)"}}>
                     <h1>Feel free to contact the artist at her email below!</h1>
                     <h2>Location</h2>
-                    <p>Grotin, NY, USA</p>
+                    <p>Groton, NY, USA</p>
                     <br/>
                     <h2>Email</h2>
                     <p>starspiritart@gmail.com</p>
