@@ -97,38 +97,8 @@ function Main(props) {
                 padding: "30px",
                 flexWrap: "wrap",
             }}>
-                <div style={{flex: 1, minWidth: "min(400px, 100%)"}}>
-                    <h2 style={{textAlign: "center"}}>CONTACT FORM</h2>
-                    <p style={{textAlign: "center", fontSize: "1.2rem"}}>
-                        Please feel free to contact the artist by filling in the
-                        information below. Thank you!
-                    </p>
-                    <div className="formContainer">
-                        <input 
-                            type="text" 
-                            placeHolder="Name" 
-                            id="name-input" 
-                        />
-                        <input 
-                            type="text" 
-                            placeHolder="Email" 
-                            id="email-input" 
-                        />
-                        <input 
-                            type="text" 
-                            placeHolder="Phone number" 
-                            id="phone-input" 
-                        />
-                        <input 
-                            type="text" 
-                            placeHolder="Subject" 
-                            id="subject-input" 
-                        />
-                        <textarea placeHolder="Message" id="message-input" />
-                        <button onClick={sendMessage}>Send!</button>
-                    </div>
-                </div>
                 <div className="infoBox" style={{flex: 1, textAlign: "center", minWidth: "min(400px, 100%)"}}>
+                    <h1>Feel free to contact the artist at her email below!</h1>
                     <h2>Location</h2>
                     <p>Grotin, NY, USA</p>
                     <br/>

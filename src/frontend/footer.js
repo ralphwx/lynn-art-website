@@ -9,7 +9,7 @@ function Footer(props) {
         <div className="container" style={{display: "flex", flexWrap: "wrap"}}>
             <div className="footerBlock">
                 <p>Dream Weaver Studio</p>
-                <p>Grotin, NY, USA</p>
+                <p>Groton, NY, USA</p>
                 <div style={{display: "flex", gap: "20px", justifyContent: "center"}}>
                     <a href="https://www.facebook.com/lcapaniczebiniak">
                         <img className="socialImg" src={facebookImgSrc} />

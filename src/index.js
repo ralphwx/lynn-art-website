@@ -1,1 +1,1 @@
-import "./frontend/galleriesListPage.js";
+import "./frontend/aboutPage.js";

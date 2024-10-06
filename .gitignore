@@ -3,3 +3,6 @@ node_modules/*
 **.DS_Store
 main/*
 build/*
+src/backend/events.txt
+src/backend/gallieries.txt
+src/backend/images/*

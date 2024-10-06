@@ -31,23 +31,23 @@ class Message(BaseModel):
     subject: str
     message: str
 
-@app.post("/message")
-def receive_message(message: Message):
-    data = {
-        "name": message.name,
-        "email": message.email,
-        "phone_number": message.phone_number,
-        "subject": message.subject,
-        "message": message.message,
-    }
-    output = json.dumps(data, indent=2) + "\n\n"
-    with open("messages.log", "a") as f:
-        f.write(output)
-    return "Success"
-
-@app.get("/allmessages")
-def get_messages():
-    return FileResponse("./messages.log")
+#@app.post("/message")
+#def receive_message(message: Message):
+#    data = {
+#        "name": message.name,
+#        "email": message.email,
+#        "phone_number": message.phone_number,
+#        "subject": message.subject,
+#        "message": message.message,
+#    }
+#    output = json.dumps(data, indent=2) + "\n\n"
+#    with open("messages.log", "a") as f:
+#        f.write(output)
+#    return "Success"
+#
+#@app.get("/allmessages")
+#def get_messages():
+#    return FileResponse("./messages.log")
 
 from eventsParser import parse as parse_events
 @app.get("/events")

@@ -15,7 +15,7 @@ function Header(props) {
 
     let dropdownDisplay = [];
     for(let i = 0; i < galleryList.length; i++) {
-        dropdownDisplay.push(<div className="menu-dropdown">
+        dropdownDisplay.push(<div className="menu-dropdown-item">
             <a href={DOMAIN + "/gallery?index=" + i}>
                 {"Gallery " + numberToRoman(i) + " " + galleryList[i]}
             </a>
@@ -44,7 +44,7 @@ function Header(props) {
             </div>
             <div className="menuItem">
                 <a href={DOMAIN + "/galleries"}>{"Galleries \u25be"}</a>
-                {dropdownDisplay}
+                <div className="menu-dropdown">{dropdownDisplay}</div>
             </div>
         </div>
     </div>

@@ -61,16 +61,19 @@ body {
     color: red;
 }
 
-.menu-dropdown {
-    display: none;
-    position: absolute;
+.menu-dropdown-item {
     border: 1px solid transparent;
     background-color: white;
     white-space: nowrap;
     padding: 0.5rem 1rem;
 }
 
-.menu-dropdown > a {
+.menu-dropdown {
+    display: none;
+    position: absolute;
+}
+
+.menu-dropdown-item > a {
     font-size: 1.3rem;
     font-family: Arial;
     color: red;
