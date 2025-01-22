@@ -7,7 +7,7 @@ import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {DOMAIN} from "./config.js";
 
-import artistImgSrc from "./images/artist.jpg";
+let artistImgSrc = DOMAIN + "/images/artist.jpg";
 
 function Main(props) {
     return <div>

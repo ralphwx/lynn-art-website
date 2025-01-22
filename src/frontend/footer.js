@@ -1,8 +1,9 @@
 import "./index.css";
-import facebookImgSrc from "./images/facebook.png";
-import instagramImgSrc from "./images/instagram.png";
-import googlePlusImgSrc from "./images/googlePlus.png";
-import pinterestImgSrc from "./images/pinterest.png";
+import {DOMAIN} from "./config.js";
+
+let facebookImgSrc = DOMAIN + "/images/facebook.png";
+let instagramImgSrc = DOMAIN + "/images/instagram.png";
+let pinterestImgSrc = DOMAIN + "/images/pinterest.png";
 
 function Footer(props) {
     return <div className="container centered footer">

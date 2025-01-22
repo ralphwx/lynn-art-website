@@ -8,6 +8,7 @@ build:
 	python3 build.py frontend/artPage.js gallery
 	python3 build.py frontend/galleriesListPage.js galleries
 	mkdir -p docs/images/
+	cp -r src/frontend/images/* docs/images/
 	cp -r src/backend/images/* docs/images/
 
 .PHONY: build

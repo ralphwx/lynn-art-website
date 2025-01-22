@@ -8,10 +8,10 @@ import {DOMAIN} from "./config.js";
 import "./index.css";
 import "./home.css";
 
-import demeterImgSrc from "./images/demeter.png";
-import artistImgSrc from "./images/artist.jpg";
-
 import {EVENTS} from "./events.js";
+
+let demeterImgSrc = DOMAIN + "/images/demeter.png";
+let artistImgSrc = DOMAIN + "/images/artist.jpg";
 
 function Main(props) {
     return <div>

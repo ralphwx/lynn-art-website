@@ -1,18 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.ab5de38a.css",
-    "main.js": "/static/js/main.9f8968f1.js",
+    "main.js": "/static/js/main.e0e8ba36.js",
     "static/media/GreatVibes.ttf": "/static/media/GreatVibes.f51f1a4f2cd0c9611249.ttf",
-    "static/media/demeter.png": "/static/media/demeter.7f34b1975479c444eee2.png",
-    "static/media/artist.jpg": "/static/media/artist.b138bb9420b78f611d46.jpg",
-    "static/media/googlePlus.png": "/static/media/googlePlus.7439416764cfc00ae9e0.png",
-    "static/media/instagram.png": "/static/media/instagram.8ef86159e659165496f1.png",
     "index.html": "/index.html",
     "main.ab5de38a.css.map": "/static/css/main.ab5de38a.css.map",
-    "main.9f8968f1.js.map": "/static/js/main.9f8968f1.js.map"
+    "main.e0e8ba36.js.map": "/static/js/main.e0e8ba36.js.map"
   },
   "entrypoints": [
     "static/css/main.ab5de38a.css",
-    "static/js/main.9f8968f1.js"
+    "static/js/main.e0e8ba36.js"
   ]
 }
