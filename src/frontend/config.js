@@ -1,4 +1,4 @@
 
-const DOMAIN = "http://localhost:8000";
+const DOMAIN = "https://ralphwx.github.io/lynn-art-website";
 
 export {DOMAIN}
