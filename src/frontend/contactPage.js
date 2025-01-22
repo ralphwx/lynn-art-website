@@ -9,63 +9,6 @@ import {DOMAIN} from "./config.js";
 
 import artistImgSrc from "./images/artist.jpg";
 
-function isValidEmail(email) {
-    let at_index = email.indexOf("@");
-    if(at_index === -1) return false;
-    if(email.indexOf("@", at_index + 1) !== -1) return false;
-    if(email.indexOf(".", at_index + 1) === -1) return false;
-    if(email[email.length - 1] === ".") return false;
-    return true;
-}
-
-function sendMessage() {
-    let name_input = document.getElementById("name-input")
-    let email_input = document.getElementById("email-input")
-    let phone_input = document.getElementById("phone-input")
-    let subject_input = document.getElementById("subject-input")
-    let message_input = document.getElementById("message-input")
-
-    let name = name_input.value;
-    let email = email_input.value;
-    let phone = phone_input.value;
-    let subject = subject_input.value;
-    let message = message_input.value;
-
-    if(name === "") name = "Anonymous";
-    if(!isValidEmail(email)) {
-        alert("Invalid email detected");
-        return;
-    }
-    if(message === "") {
-        alert("Message cannot be empty");
-        return;
-    }
-
-    name_input.value = "";
-    email_input.value = "";
-    phone_input.value = "";
-    subject_input.value = "";
-    message_input.value = "";
-
-    fetch(DOMAIN + "/message", {
-        method: "POST",
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            phone_number: phone,
-            subject: subject,
-            message: message,
-        }),
-        headers: {
-            "Content-type": "application/json",
-        }
-    }).then((response) => {
-        alert("Message sent!");
-    }).catch((err) => {
-        alert("Failed to connect, please try again later.");
-    });
-}
-
 function Main(props) {
     return <div>
         <Header />

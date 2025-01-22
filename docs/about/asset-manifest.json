@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.19b952e5.css",
+    "main.js": "/static/js/main.c1dba148.js",
+    "static/media/GreatVibes.ttf": "/static/media/GreatVibes.f51f1a4f2cd0c9611249.ttf",
+    "static/media/googlePlus.png": "/static/media/googlePlus.7439416764cfc00ae9e0.png",
+    "static/media/instagram.png": "/static/media/instagram.8ef86159e659165496f1.png",
+    "index.html": "/index.html",
+    "main.19b952e5.css.map": "/static/css/main.19b952e5.css.map",
+    "main.c1dba148.js.map": "/static/js/main.c1dba148.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19b952e5.css",
+    "static/js/main.c1dba148.js"
+  ]
+}

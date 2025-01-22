@@ -11,17 +11,9 @@ import "./home.css";
 import demeterImgSrc from "./images/demeter.png";
 import artistImgSrc from "./images/artist.jpg";
 
+import {EVENTS} from "./events.js";
+
 function Main(props) {
-    let [events, setEvents] = useState([]);
-
-    useEffect(() => {
-        fetch(DOMAIN + "/events").then((response) => {
-            return response.json();
-        }).then((data) => {
-            setEvents(data);
-        });
-    }, []);
-
     return <div>
         <Header />
         <div className="container centered" 
@@ -75,7 +67,7 @@ function Main(props) {
                     <h2>
                         Events & Exhibitions
                     </h2>
-                    {events.map(x => <p>{x}</p>)}
+                    {EVENTS}
                 </div>
                 <div>
                     <h2>

@@ -3,6 +3,7 @@ import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {DOMAIN} from "./config.js";
 import {numberToRoman} from "./gallery_numbers.js";
+import {galleryData} from "./galleriesData.js"
 import "./gallery.css";
 import "./index.css";
 
@@ -28,8 +29,6 @@ function Main(props) {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-fetch(DOMAIN + "/all_galleries").then((response) => {
-    return response.json();
-}).then((data) => {
-    root.render(<Main galleries={data} />);
-});
+let data = [];
+for(let {name} of galleryData) data.push(name);
+root.render(<Main galleries={data} />);

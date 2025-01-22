@@ -5,6 +5,7 @@ import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {DOMAIN} from "./config.js";
 import {numberToRoman} from "./gallery_numbers.js";
+import {galleryData} from "./galleriesData.js";
 
 import "./index.css";
 import "./gallery.css";
@@ -17,7 +18,7 @@ import "./gallery.css";
 //    Middle column list of {src, title} objects
 //    Right column list of {src, title} objects
 
-let imageUrlPrefix = DOMAIN + "/image?src=";
+let imageUrlPrefix = DOMAIN + "/images/";
 
 /**
  * Sub-component for displaying a single art piece in the gallery. Props should
@@ -144,18 +145,17 @@ function Main(props) {
 
 const queryParameters = new URLSearchParams(window.location.search);
 let galleryNumber = parseInt(queryParameters.get("index"));
-if(Number.isNaN(galleryNumber)) galleryNumber = -1;
+if(Number.isNaN(galleryNumber)) galleryNumber = 0;
+if(galleryNumber < 0 || galleryNumber >= galleryData.length) galleryNumber= 0;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-fetch(DOMAIN + "/gallery_data?number=" + galleryNumber).then((response) => {
-    return response.json();
-}).then((data) => {
-    root.render(<Main
-        leftColumn={data.left}
-        centerColumn={data.center}
-        rightColumn={data.right}
-        galleryNumber={numberToRoman(galleryNumber)}
-        galleryName={data.name}
-    />);
-})
+let data = galleryData[galleryNumber];
+
+root.render(<Main
+    leftColumn={data.left}
+    centerColumn={data.center}
+    rightColumn={data.right}
+    galleryNumber={numberToRoman(galleryNumber)}
+    galleryName={data.name}
+/>);
 

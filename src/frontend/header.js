@@ -2,17 +2,12 @@ import "./index.css";
 import {DOMAIN} from "./config.js";
 import {numberToRoman} from "./gallery_numbers.js";
 import {useState, useEffect} from "react";
+import {galleryData} from "./galleriesData.js";
+
+let galleryList = [];
+for(let {name} of galleryData) galleryList.push(name);
 
 function Header(props) {
-    let [galleryList, setGalleryList] = useState([]);
-    useEffect(() => {
-        fetch(DOMAIN + "/all_galleries").then((response) => {
-            return response.json();
-        }).then((data) => {
-            setGalleryList(data);
-        });
-    }, []);
-
     let dropdownDisplay = [];
     for(let i = 0; i < galleryList.length; i++) {
         dropdownDisplay.push(<div className="menu-dropdown-item">
