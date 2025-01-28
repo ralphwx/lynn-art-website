@@ -1,4 +1,4 @@
 
-const DOMAIN = "https://ralphwx.github.io/lynn-art-website";
+const DOMAIN = "https://dreamweaverstudio.org";
 
 export {DOMAIN}
